@@ -1,9 +1,11 @@
 import Card from "../../components/Card/Card";
 import { Container } from "./HomePage.styled";
 import Header from "../../components/Header/Header";
+import GlobalStateContext from "../../global/GlobalStateContext";
+import { useContext } from "react";
 
-function HomePage(props) {
-  const { pokelist, addToPokedex, pokedex } = props;
+function HomePage() {
+  const { pokelist, pokedex, addToPokedex } = useContext(GlobalStateContext);
 
   // não mostrar pokemons que estão na pokedex
   const filteredPokelist = () =>
